@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-demployment2
+  labels:
+    app  : my-k8s-application
+spec:
+  selector:
+    matchLabels:
+      project: kgb2
+  template:
+    metadata:
+      labels:
+        project: kgb2
+    spec:
+      containers:
+        - name: kgb-web
+          image: nginx
+          ports:
+            - containerPort: 80
